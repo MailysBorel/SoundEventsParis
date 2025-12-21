@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – SoundEventsParis</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="hero" style="height: 50vh; min-height: 400px;">
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="prestations.html">Prestations</a>
+                <a href="apropos.html">À propos</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            <img src="../assets/images/logo-removebg-preview.png" alt="SoundEventsParis Logo" class="logo-top-left">
+        </nav>
+        <div class="hero-content">
+            <div class="hero-text animate-slide-up">
+                <h1>Contactez-nous</h1>
+                <p>Construisons ensemble votre événement.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="reveal">Demander un Devis Gratuit</h2>
+            <form action="https://formspree.io/f/VOUS_DEVEZ_METTRE_VOTRE_ID_FORMSPREE_ICI" method="POST" class="reveal"
+                style="max-width: 600px;">
+                <input type="hidden" name="_language" value="fr">
+                <input type="hidden" name="_subject" value="Contact Site - SoundEventsParis">
+
+                <div class="form-group">
+                    <input type="text" name="nom" placeholder="Votre Nom et Prénom" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Votre Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="telephone" placeholder="Votre Numéro de Téléphone (Facultatif)">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" style="min-height: 200px;"
+                        placeholder="Dites-nous en plus sur votre événement :&#10;- Type (Mariage, Anniversaire...)&#10;- Date et Lieu&#10;- Nombre d'invités estimé"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Envoyer ma demande</button>
+            </form>
+
+            <div class="contact-info reveal" style="margin-top: 60px;">
+                <p>📍 Paris & Île-de-France</p>
+                <p>📞 06 51 13 33 45</p>
+                <p>✉️ contact@soundeventsparis.fr</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 SoundEventsParis</p>
+        <div class="socials">
+            <a href="https://www.instagram.com/soundevents_paris/" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/soundeventsparis/" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Scroll to Top Button Logic
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" id="scrollTopBtn" title="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </a>
+</body>
+
+</html>

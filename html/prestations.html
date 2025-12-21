@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestations – SoundEventsParis</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="hero" style="height: 60vh; min-height: 400px;">
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="prestations.html" class="active">Prestations</a>
+                <a href="apropos.html">À propos</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <img src="../assets/images/logo-removebg-preview.png" alt="SoundEventsParis Logo" class="logo-top-left">
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text animate-slide-up">
+                <h1>Nos Prestations</h1>
+                <p>Une expertise sur-mesure pour chaque événement</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="cards">
+            <div class="card reveal">
+                <div class="icon">💍</div>
+                <h3>Mariages</h3>
+                <p>Du vin d'honneur à la fin de soirée, nous créons une ambiance musicale progressive et élégante.
+                    </p>
+            </div>
+            <div class="card reveal delay-1">
+                <div class="icon">🥂</div>
+                <h3>Soirées Privées</h3>
+                <p>Anniversaires, fiançailles, fêtes de famille... Nous adaptons la playlist à vos goûts et à ceux de
+                    vos invités pour une fête mémorable.</p>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="icon">💼</div>
+                <h3>Entreprises</h3>
+                <p>Lancements de produits, séminaires, galas. Une prestation professionnelle qui respecte votre image de
+                    marque.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section dark">
+        <h2 class="reveal">Le Matériel</h2>
+        <div class="container reveal">
+            <p class="lead">Qualité sonore et visuelle irréprochable.</p>
+            <p>Nous utilisons exclusivement du matériel haut de gamme pour garantir un son
+                clair et puissant, et un éclairage dynamique adapté à l'ambiance.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="reveal">Options Disponibles</h2>
+
+        <div style="margin-top: 50px;">
+            <a href="contact.html" class="btn btn-gold reveal">Demander un devis personnalisé</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 SoundEventsParis</p>
+        <div class="socials">
+            <a href="https://www.instagram.com/soundevents_paris/" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/soundeventsparis/" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Scroll to Top Button Logic
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" id="scrollTopBtn" title="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </a>
+</body>
+
+</html>

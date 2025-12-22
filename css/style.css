@@ -484,6 +484,10 @@ form {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    .hero::before {
+        background-attachment: scroll; /* Fix for mobile browser address bar zoom issue */
+    }
+
     .logo-top-left {
         width: 80px;
         top: 20px;

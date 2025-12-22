@@ -19,15 +19,23 @@
 
 <header class="hero">
     <nav class="nav">
-        <div class="nav-links">
-            <a href="html/prestations.html">Prestations</a>
-            <a href="html/apropos.html">À propos</a>
-            <a href="html/galerie.html">Galerie</a>
-            <a href="html/avis.html">Avis</a>
-            <a href="html/contact.html">Contact</a>
-        </div>
+    <a href="index.html" class="logo-link">
         <img src="assets/images/logo-removebg-preview.png" alt="SoundEventsParis Logo" class="logo-top-left">
-    </nav>
+    </a>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+        <a href="html/prestations.html">Prestations</a>
+        <a href="html/apropos.html">À propos</a>
+        <a href="html/galerie.html">Galerie</a>
+        <a href="html/contact.html">Contact</a>
+    </div>
+</nav>
 
     <div class="hero-content">
         <!-- Logo moved to top right -->
@@ -190,6 +198,22 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    });
+
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Optionnel : Animation du burger en "X"
+        menuToggle.classList.toggle('is-active');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
         });
     });
 </script>

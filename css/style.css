@@ -484,47 +484,64 @@ form {
 
 /* --- LE RESPONSIVE MOBILE (MODIFIÉ) --- */
 @media (max-width: 768px) {
+    .hero::before {
+        background-attachment: scroll;
+        /* Fix prevents zoom effect on mobile */
+        background-position: center center;
+    }
+
     .nav {
-        flex-direction: column; /* Empile Logo + Liens */
-        padding: 5px; /* Diminué (était 15px) */
-        top: 5px;   /* Plus proche du bord haut */
+        flex-direction: column;
+        /* Empile Logo + Liens */
+        padding: 5px;
+        /* Diminué (était 15px) */
+        top: 5px;
+        /* Plus proche du bord haut */
     }
 
     .logo-top-left {
-        position: relative; 
+        position: relative;
         top: 0;
         left: 0;
-        width: 110px; /* Taille diminuée (était 140px) */
-        margin-bottom: 8px; /* Espace réduit (était 15px) */
+        width: 110px;
+        /* Taille diminuée (était 140px) */
+        margin-bottom: 8px;
+        /* Espace réduit (était 15px) */
     }
 
     .nav-links {
-        padding: 6px 15px; /* Barre plus fine (était 10px 20px) */
-        background: rgba(0, 0, 0, 0.5); 
+        padding: 6px 15px;
+        /* Barre plus fine (était 10px 20px) */
+        background: rgba(0, 0, 0, 0.5);
     }
 
     .nav a {
         margin: 0 6px;
-        font-size: 0.6rem; /* Texte plus petit (était 0.7rem) */
+        font-size: 0.6rem;
+        /* Texte plus petit (était 0.7rem) */
     }
 
     .hero h1 {
         font-size: 2.2rem;
-        margin-top: 60px; /* Remonté car la nav est plus petite */
+        margin-top: 60px;
+        /* Remonté car la nav est plus petite */
     }
 
     /* Le reste de ton responsive original reste inchangé */
     .about-flex {
         flex-direction: column;
     }
+
     .section {
         padding: 60px 20px;
     }
+
     .btn {
         width: 100%;
         margin-bottom: 10px;
         margin-left: 0;
     }
+
     .contact-container {
         padding: 30px 20px;
     }
